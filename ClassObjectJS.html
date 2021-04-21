@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Object JavaScript by Feby Maulana Hendrayano</title>
+</head>
+<body>
+
+    <form onsubmit="return false">
+        <input type="text" id= "Badanpesawat">
+        <input type="text" id= "Kokpit">
+        <input type="text" id= "jumlahkursi">
+        <button type="submit">
+            Klik
+        </button>
+    </form>
+    <script>
+        class Pesawat{
+            Bdnpswt;  //Panjang Badan Pesawat Terbang
+            kokpit;   //tempat pilot mengemudika pesawat
+            jmlkrs;   //Jumlah Kursi Penumpang Pesawat    
+
+        landing(){
+            console.log("Pesawat akan Mendarat");
+        }
+
+        descending(){
+            console.log("Pesawat Sedang Terbang Turun");
+        }
+
+        climbig(){
+            console.log("Pesawat sedang Terbang Naik");
+        }
+
+        cruishing(){
+            console.log("Pesawat Sedng Terbang Datar");
+        }
+
+        }
+
+        let airlines = new Pesawat ();
+        airlines.climbig();
+
+        airlines.cruishing();
+
+        // function myFunction() {
+        //     document,getElementById("descending").innerHTML= "YOU CLICKED ME"
+        // }
+
+        let button = document.querrySelector("button");
+        button.addEventlistener("click", () => {
+            console.log("Button clicked.");
+        })
+        </script>
+</body>
+</html>
