@@ -1,58 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Object JavaScript by Feby Maulana Hendrayano</title>
+    <style type="text/css">
+        table{
+            padding: 0;
+            margin: 0;
+            font-family: serif, 'Times New Roman', Times;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-
     <form onsubmit="return false">
-        <input type="text" id= "Badanpesawat">
-        <input type="text" id= "Kokpit">
-        <input type="text" id= "jumlahkursi">
-        <button type="submit">
-            Klik
-        </button>
+        <table>
+            <tr>
+                <td>
+                    Kokpit  Pesawat
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="text" id= "Kokpit">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Jumlah Kursi Pesawat
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="text" id= "jmlkrs">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Panjang Badan Pesawat
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="text" id= "Bdnpswt" placeholder ="satuan meter">
+                </td>
+            </tr>    
+            <td>
+                <br>
+                <button onclick="Fly()">
+                    klik
+                </button>
+            </td>
+        </table>
     </form>
     <script>
-        class Pesawat{
-            Bdnpswt;  //Panjang Badan Pesawat Terbang
-            kokpit;   //tempat pilot mengemudika pesawat
-            jmlkrs;   //Jumlah Kursi Penumpang Pesawat    
+        function Fly() {
+            let Badan  = document.getElementById("Bdnpswt").value;
+            let pilot  = document.getElementById("Kokpit").value;
+            let Kursi  = document.getElementById("jmlkrs").value; 
 
-        landing(){
-            console.log("Pesawat akan Mendarat");
-        }
+            class Pesawat{
+            
+            Bdnpswt;    //Panjang Badan Pesawat Terbang
+            Kokpit;     //tempat pilot mengemudikan pesawat
+            jmlkrs;     //Jumlah Kursi Penumpang Pesawat
 
-        descending(){
-            console.log("Pesawat Sedang Terbang Turun");
-        }
+            constructor(Bdnpswt,Kokpit,jmlkrs){
+                this.Bdnpswt = Badan;  
+                this.Kokpit  = pilot;   
+                this.jmlkrs  = Kursi;   
+            }    
 
-        climbig(){
-            console.log("Pesawat sedang Terbang Naik");
-        }
+            landing(){
+                return("Pesawat akan Mendarat");
+            }
 
-        cruishing(){
-            console.log("Pesawat Sedng Terbang Datar");
-        }
+            descending(){
+                return("Pesawat Sedang Terbang Turun");
+            }
 
-        }
+            climbig(){
+                return("Pesawat sedang Terbang Naik");
+            }
 
-        let airlines = new Pesawat ();
-        airlines.climbig();
+            cruishing(){
+                return("Pesawat Sedng Terbang Datar");
+            }
 
-        airlines.cruishing();
+        }        
 
-        // function myFunction() {
-        //     document,getElementById("descending").innerHTML= "YOU CLICKED ME"
-        // }
+        let LionAir = new Pesawat;
+        let GarudaIndonesia = new Pesawat;
+        let Citilink = new Pesawat;
+        let Bighelikopter = new Pesawat;
 
-        let button = document.querrySelector("button");
-        button.addEventlistener("click", () => {
-            console.log("Button clicked.");
-        })
-        </script>
+        console.log("kokpit : " + LionAir.Kokpit);
+        console.log("Jumlah Kursi Penumpang Pesawat : " + LionAir.jmlkrs);
+        console.log("Panjang Badan Pesawat : " + LionAir.Bdnpswt);
+        console.log("Kondisi Pesawat : " + LionAir.descending());
+
+        console.log("kokpit : " + GarudaIndonesia.Kokpit);
+        console.log("Jumlah Kursi Penumpang Pesawat : " + GarudaIndonesia.jmlkrs);
+        console.log("Panjang Badan Pesawat : " + GarudaIndonesia.Bdnpswt);
+        console.log("Kondisi Pesawat : " + GarudaIndonesia.landing());
+
+        console.log("kokpit : " + Citilink.Kokpit);
+        console.log("Jumlah Kursi Penumpang Pesawat : " + Citilink.jmlkrs);
+        console.log("Panjang Badan Pesawat : " + Citilink.Bdnpswt);
+        console.log("Kondisi Pesawat : " + Citilink.climbig());
+
+        console.log("kokpit : " + Bighelikopter.Kokpit);
+        console.log("Jumlah Penumpang Pesawat : " + Bighelikopter.jmlkrs);
+        console.log("Panjang Badan Pesawat : " + Bighelikopter.Bdnpswt);
+        console.log("Kondisi Pesawat : " + Bighelikopter.cruishing());
+
+    }
+    </script>
+
 </body>
 </html>
